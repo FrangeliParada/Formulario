@@ -1,0 +1,111 @@
+*{
+margin: 0px;
+padding: 0px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+body{
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-attachment: fixed;
+	background-image: url("dmm.jpg");
+}
+
+
+
+.formulario{
+	background: #fff;
+	color: black;
+	display: block;
+	width: 500px;
+	max-width: 100%;
+	border: 3px solid #ccc;
+	margin: auto;
+	margin-top: 30px;
+	padding: 20px;
+	box-shadow: 0 0 20px 1px rgba(0,0,0,0.3);
+	position: relative;
+	border-style: 5px;
+
+}
+.row{
+	background: white
+	width: 100%;
+	margin: 30px;
+}
+
+.form_label, .form-input{
+	display: block;
+	width: 100%;
+	font-size: 1em;
+}
+.form_submit{
+	
+	width: 100%;
+	margin-bottom: 40px;
+	display: inline-block;
+	border: 1px solid rgba(0,0,0,0.3);
+	
+}
+.form-input{
+	padding: 20px;
+	margin-bottom: 40px;
+	border: 1px solid rgba(0,0,0,0.3);
+}
+.form_label{
+	padding-left: 15px
+	font-weight:bold;
+	border: none;
+	position: relative;
+	font-weight: bold;
+	font-size: 1.5em;
+	color: rgba(0,0,0,0.7);
+	margin: 10px;
+
+}
+.title{
+	font-size: 2em;
+	color: rgba(0,0,0,0.7);
+	text-align: center;
+	margin: 20px;
+	
+}
+.input{
+	padding: 20px;
+	margin-bottom: 40px;
+	font-size: 1em;	
+}
+.select{
+	display: flex;
+}
+.btn{
+	width: 100%;
+	display: inline-flex;
+	text-align: center;
+	margin: 5px;
+}
+.guardar{
+	background: blue;
+	color: white;
+	border :1px solid #ccc;
+
+}
+.eliminar{
+	background: red;
+	color: white;
+	border: 1px solid #ccc;
+}
+.eliminar:active{
+	background: rgba(233,24,345,0.7);
+}
+.guardar:active{
+	background: rgba(120,39,23,0.7);
+}
+.tc{
+	margin-left: 40px;
+	width: 20px;
+}
+.radio{
+	font-size: 2em;
+}

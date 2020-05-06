@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="estilos.css">
+	<script type="text/javascript" src="practica.js"></script>
+	<title>Formulario</title>
+</head>
+<body>
+
+	<div class="row">
+		<form class="formulario" id="formulario" name="formulario">
+			<div class="form-title">
+				<h1 class="title">Formulario</h1>
+			</div>
+			<div class="form">
+			<label class="form_label">Nombre</label>
+			<input type="text" name="nombre" id="nombre" class="form-input" placeholder="Escriba su nombre" required>
+			</div>
+
+			<div class="form">
+			<label class="form_label">Apellido</label>
+			<input type="text" name="apellido" id="apellido" class="form-input" placeholder="Escriba su Apellido" required>
+			</div>
+
+			<div class="form">
+			<label class="form_label">Sexo</label>
+			<input type="radio" name="radio" class="input radio" id="radio" required>Hombre
+			<input type="radio" name="radio" class="input radio" id="radio" required>Mujer
+			<input type="radio" name="radio" class="input radio" id="radio" required>No especificar
+			</div>
+
+			<div class="form">
+			<label class="form_label">Cédula de Identidad</label>
+			<select class="select">
+				<option class="v">V</option>
+				<option class="e">E</option>
+			
+			<input type="number" name="cedula" id="cedula" class="form-input" placeholder="Escriba su Cédula" required>
+			</select>
+			</div>
+
+			<div class="form">
+			<label class="form_label">Correo</label>
+			<input type="email" name="correo" id="correo" class="form-input" placeholder="Escriba su correo" required>
+			</div>
+
+			<div class="form">
+			<label class="form_label">Teléfono</label>
+			<input type="number" name="telefono" id="telefono" class="form-input" placeholder="Escriba su numero telefónico" maxlength="14" required>
+			</div>
+
+			<div class="form btn">
+			<input type="submit" name="guardar" id="guardar" class="input btn guardar" value="Guardar" required>
+			<input type="button" name="eliminar" id="eliminar" class="input btn eliminar" value="Eliminar" required>
+			</div>
+		</form>
+	</div>
+<script type="text/javascript">
+	(function(){
+			var formulario = document.getElementsByName('formulario'),
+				enlementos = formulario.elements,
+				boton = document.getElementById('guardar'),
+				eliminar = document.getElementById('eliminar');
+		var cedula = document.getElementById("cedula"),
+		 nombre = document.getElementById('nombre'),
+		 apellido = document.getElementById('apellido'),
+		 correo = document.getElementById('correo'),
+		 tlf = document.getElementById("telefono");
+		
+		let regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+).(\.\w{2,3})+$/;
+
+		var aviso = function(e){
+
+			if( tlf.value==0 ||nombre.value == 0 || apellido.value == 0 || correo.value==0 || cedula.value==0){
+				alert("complete todos los campos para que sus datos sean guardados");
+				e.preventDefault();
+			}
+
+			if (nombre.value.length>25||apellido.value.length>25||tlf.value.length>14||cedula.value.length>10) {
+				alert("Hay algo mal en tus datos, verifícalos o vuelvelos a escribir");
+				alert("Probablemente escribiste con letras o números de más");
+				e.preventDefault()
+
+			}
+
+if (nombre.value.length<25 && apellido.value.length<25 && tlf.value.length<14 && cedula.value.length<10 && tlf.value!=0 && nombre.value != 0 && apellido.value != 0 && correo.value != 0 && cedula.value!=0 ) {
+				alert("Sus todos se han guadado con éxito");
+			}
+		};
+
+		boton.addEventListener("click",aviso);
+
+		
+		var eliminando = function(){
+			if (nombre.value != 0||apellido.value != 0 || correo.value != 0) {
+					nombre.value = null;
+					apellido.value = null;
+					correo.value = null;
+					cedula.value = null;
+					tlf.value = null;
+				}
+
+			if (formulario.radio[0]== true || formulario.radio[1]== true) {
+				formulario.radio[0]= !true;
+				formulario.radio[1]= !true;
+			}
+		};
+
+		eliminar.addEventListener("click",eliminando);
+
+			}())
+
+</script>
+
+</body>
+</html>
